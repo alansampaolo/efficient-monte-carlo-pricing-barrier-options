@@ -145,7 +145,7 @@ For this reason, the comparison uses the empirical efficiency indicator:
 
 where:
 
-- `Time` is the total end-to-end computational time required to run the complete pricing procedure for a given barrier level, including random-number generation, path simulation and estimator-specific operations;
+- `Time` is the total end-to-end computational time required to run the complete pricing procedure for a given barrier level, including random number generation, path simulation and estimator specific operations;
 - `SE` is the estimated standard error of the Monte Carlo price.
 
 Lower values indicate a better trade off between computational cost and statistical precision.
