@@ -15,19 +15,19 @@ Barrier options are path-dependent derivatives, since their payoff depends not o
 
 Monte Carlo simulation is therefore a natural pricing method.
 
-The main objective is not only to obtain accurate prices, but to determine which estimator provides the best trade-off between statistical precision and computational cost.
+The main objective is not only to obtain accurate prices, but to determine which estimator provides the best trade off between statistical precision and computational cost.
 
 ## Pricing Framework
 
-Derivative prices are represented as discounted risk-neutral expected payoffs.
+Derivative prices are represented as discounted risk neutral expected payoffs.
 
 When the expectation cannot be computed analytically, Monte Carlo simulation approximates it by generating simulated paths and averaging the corresponding discounted payoffs.
 
-For barrier options, the full simulated path is required because the payoff depends on the barrier-hitting event.
+For barrier options, the full simulated path is required because the payoff depends on the barrier hitting event.
 
 ## Black-Scholes Benchmark
 
-The Black-Scholes model is introduced as a benchmark framework.
+The Black Scholes model is introduced as a benchmark framework.
 
 Its exact transition rule provides a simple environment for understanding Monte Carlo simulation before moving to stochastic volatility.
 
@@ -35,9 +35,9 @@ The limitations of constant volatility then motivate the use of the OUSV model.
 
 ## OUSV Model
 
-The main pricing framework is the Ornstein-Uhlenbeck stochastic volatility model.
+The main pricing framework is the Ornstein Uhlenbeck stochastic volatility model.
 
-The asset price is driven by a latent volatility factor following an Ornstein-Uhlenbeck mean-reverting process.
+The asset price is driven by a latent volatility factor following an Ornstein-Uhlenbeck mean reverting process.
 
 Compared with Black-Scholes, the OUSV model allows volatility to evolve stochastically over time.
 
@@ -55,19 +55,15 @@ It is computationally inexpensive but can introduce larger discretization bias.
 
 ### VHP Scheme
 
-A scheme based on van Haastrecht, Lord and Pelsser improves on Euler by:
-
-- simulating the Ornstein-Uhlenbeck latent factor from its exact transition;
-- using information from both endpoints of each time interval;
-- improving the approximation of integrated quantities entering the log-price dynamics.
+A scheme based on van Haastrecht, Lord and Pelsser improves on Euler by simulating the Ornstein-Uhlenbeck latent factor from its exact transition;
 
 ### Inverse Gaussian Scheme
 
 The Inverse Gaussian Scheme provides a more refined approximation of the OUSV dynamics.
 
-It simulates the integrated latent factor more accurately and approximates the conditional integrated variance through a moment-matched Inverse Gaussian distribution.
+It simulates the integrated latent factor more accurately and approximates the conditional integrated variance through a moment matched Inverse Gaussian distribution.
 
-The three schemes therefore represent different trade-offs between computational cost and discretization accuracy.
+The three schemes therefore represent different trade offs between computational cost and discretization accuracy.
 
 ## Fourier Pricing Benchmark
 
@@ -115,8 +111,6 @@ For an up-and-in option, once the barrier is reached, the remaining payoff becom
 
 Instead of continuing the simulation to maturity, the residual vanilla call is priced using the OUSV Fourier formula.
 
-For up-and-out calls, the method is implemented through in-out parity.
-
 ## Numerical Design
 
 The numerical analysis considers multiple barrier levels:
@@ -139,8 +133,6 @@ the analysis records:
 - end-to-end computational time;
 - efficiency.
 
-Pathwise early stopping is used whenever the payoff or estimator becomes fully determined at the first barrier hitting time.
-
 ## Efficiency Criterion
 
 Variance reduction alone is not sufficient to determine whether an estimator is practically useful.
@@ -153,10 +145,10 @@ For this reason, the comparison uses the empirical efficiency indicator:
 
 where:
 
-- `Time` is the complete end-to-end computational time;
-- `SE` is the estimated standard error.
+- `Time` is the total end-to-end computational time required to run the complete pricing procedure for a given barrier level, including random-number generation, path simulation and estimator-specific operations;
+- `SE` is the estimated standard error of the Monte Carlo price.
 
-Lower values indicate a better trade-off between computational cost and statistical precision.
+Lower values indicate a better trade off between computational cost and statistical precision.
 
 ## Main Results
 
@@ -164,7 +156,7 @@ Lower values indicate a better trade-off between computational cost and statisti
 
 Control Variates are generally the most efficient estimator for low, medium and moderately high barriers under all three simulation schemes.
 
-For these barriers, the up-and-in payoff remains strongly related to the vanilla call payoff, making the control variate particularly effective.
+For these barriers, the up-and-in payoff remains strongly related to the vanilla payoff, making the control variate particularly effective.
 
 At the highest barrier, Plain Monte Carlo becomes competitive and is selected as the most efficient estimator.
 
@@ -188,7 +180,7 @@ However, it is computationally more expensive.
 
 On a sufficiently fine grid, Euler and VHP become statistically consistent with the Fourier benchmark while requiring substantially less computational time.
 
-This highlights the trade-off between simulation accuracy and computational cost.
+This highlights the trade off between simulation accuracy and computational cost.
 
 ## Main Takeaways
 
@@ -197,9 +189,7 @@ This highlights the trade-off between simulation accuracy and computational cost
 - Variance reduction is not automatically equivalent to higher computational efficiency.
 - Control Variates are especially effective when the barrier payoff is strongly related to the vanilla payoff.
 - Conditional Monte Carlo reduces variance but can become expensive because of repeated Fourier evaluations.
-- Plain Monte Carlo can remain competitive when early stopping substantially reduces computational cost.
 - The best estimator depends on the option type, barrier level and simulation scheme.
-- The Inverse Gaussian Scheme offers the highest observed simulation accuracy, while Euler and VHP can provide more attractive computational trade-offs on fine grids.
 
 ## Repository Structure
 
