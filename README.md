@@ -17,6 +17,8 @@ Monte Carlo simulation is therefore a natural pricing method.
 
 The main objective is not only to obtain accurate prices, but to determine which estimator provides the best trade off between statistical precision and computational cost.
 
+The ultimate goal is to determine which pricing approach is most computationally efficient for different combinations of option type, barrier level and simulation scheme, rather than identifying a single method that is universally optimal.
+
 ## Pricing Framework
 
 Derivative prices are represented as discounted risk neutral expected payoffs.
@@ -190,6 +192,7 @@ This highlights the trade off between simulation accuracy and computational cost
 - Control Variates are especially effective when the barrier payoff is strongly related to the vanilla payoff.
 - Conditional Monte Carlo reduces variance but can become expensive because of repeated Fourier evaluations.
 - The best estimator depends on the option type, barrier level and simulation scheme.
+- The practical choice of pricing method should therefore depend on the specific contract and numerical setting rather than on variance reduction performance alone.
 
 ## Repository Structure
 
