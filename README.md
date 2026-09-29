@@ -1,4 +1,4 @@
-# Efficient Monte Carlo Pricing of Barrier Options under the OUSV Model
+# Monte Carlo Methods and Variance Reduction Techniques for Pricing Barrier Options under Ornstein–Uhlenbeck Stochastic Volatility
 
 Master's thesis on Monte Carlo pricing of path-dependent barrier options under the Ornstein-Uhlenbeck stochastic volatility model, with a focus on variance reduction and computational efficiency.
 
