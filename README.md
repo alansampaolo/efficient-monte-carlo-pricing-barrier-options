@@ -30,7 +30,7 @@ Each method is ranked by an **efficiency indicator, Time × SE²**: a technique 
 
 ## Repository
 
-- `efficient_monte_carlo_pricing_barrier_options_thesis.pdf` — full thesis (theory, simulation schemes, variance reduction methods, numerical results)
-- `Alan_Sampaolo_tesi_ppt.pdf` — thesis presentation
+- `efficient_monte_carlo_pricing_barrier_of_options_thesis.pdf` — full thesis (theory, simulation schemes, variance reduction methods, numerical results)
+- `presentation.pdf` — thesis presentation
 
 **Topics:** Monte Carlo simulation · stochastic volatility · barrier options · variance reduction · Fourier pricing · MATLAB
