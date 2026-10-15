@@ -12,7 +12,7 @@ Barrier options have no closed-form price under stochastic volatility, which is 
 
 | | Options considered |
 |---|---|
-| **Contracts** | Up-and-in and up-and-out calls, barriers from 105 to 190 (spot = strike = 100) |
+| **Contracts** | Discretely monitored up-and-in and up-and-out calls, barriers from 105 to 190 (spot = strike = 100, 1-year maturity, 504 monitoring dates, 10,000 paths) |
 | **Simulation schemes** | Euler · VHP (van Haastrecht, Lord and Pelsser) · Inverse Gaussian Scheme (Brignone and Sgarra) |
 | **Estimators** | Plain Monte Carlo · Antithetic variables · Control variates · Conditional Monte Carlo |
 | **Benchmark** | Semi-closed Fourier price of the European call (Gauss–Laguerre quadrature) |
