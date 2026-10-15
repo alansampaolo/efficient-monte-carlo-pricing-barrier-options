@@ -26,7 +26,7 @@ Each method is ranked by an **efficiency indicator, Time × SE²**: a technique 
 - **Conditional Monte Carlo** reduces variance but is penalised by the cost of repeated Fourier evaluations.
 - **Simulation schemes:** against the Fourier benchmark, the Inverse Gaussian Scheme gives the smallest pricing error (about **12× smaller than Euler** on a coarse grid and **20× smaller** on a fine grid), but it is much slower. On a fine grid, Euler and VHP are already statistically consistent with the benchmark at a fraction of the cost.
 
-**Takeaway:** there is no universally best method. The most efficient choice depends jointly on the option type, the barrier level and the simulation scheme.
+**Takeaway:** there is no universally best Monte Carlo method. The most efficient choice depends jointly on the option type, the barrier level and the simulation scheme.
 
 ## Repository
 
