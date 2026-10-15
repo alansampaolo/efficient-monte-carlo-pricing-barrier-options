@@ -30,6 +30,7 @@ Each method is ranked by an **efficiency indicator, Time × SE²**: a technique 
 
 ## Repository
 
+- `code/` — MATLAB implementation of the three simulation schemes, the four estimators, the OUSV Fourier pricing and the numerical experiments
 - `efficient_monte_carlo_pricing_barrier_options_thesis.pdf` — full thesis (theory, simulation schemes, variance reduction methods, numerical results)
 - `presentation.pdf` — thesis presentation
 
