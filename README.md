@@ -1,6 +1,6 @@
 # Efficient Monte Carlo Pricing of Barrier Options under the OUSV Model
 
-**MSc thesis in Finance, University of Pavia (2025–2026)** — Supervisor: Prof. Riccardo Brignone · MATLAB
+**MSc thesis in Finance, University of Pavia (2024–2026)** — Supervisor: Prof. Riccardo Brignone · MATLAB
 
 ## Objective
 
