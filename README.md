@@ -21,10 +21,10 @@ Each method is ranked by an **efficiency indicator, Time × SE²**: a technique 
 
 ## Key results
 
-- **Control variates** (with the vanilla call as control) are the most efficient estimator for up-and-in calls at almost all barrier levels: at the lowest barrier they cut the standard error by up to **two orders of magnitude** compared with plain Monte Carlo.
+- **Control variates** (with the vanilla call as control) are the most efficient estimator for up-and-in calls at almost all barrier levels: at the lowest barrier they cut the standard error by **two orders of magnitude** compared with plain Monte Carlo.
 - For **up-and-out calls** the answer depends on the barrier: plain Monte Carlo and antithetic variables win for low barriers (many paths are knocked out early), control variates for high barriers.
 - **Conditional Monte Carlo** reduces variance but is penalised by the cost of repeated Fourier evaluations.
-- **Simulation schemes:** against the Fourier benchmark, the Inverse Gaussian Scheme gives the smallest pricing error (about **12× smaller than Euler** on a coarse grid and **20× smaller** on a fine grid), but it is much slower. On a fine grid, Euler and VHP are already statistically consistent with the benchmark at a fraction of the cost.
+- **Simulation schemes:** against the Fourier benchmark, the Inverse Gaussian Scheme gives the smallest pricing error (about **12 times smaller than Euler** on a coarse grid and **20 times smaller than Euler** on a fine grid), but it is much slower. On a fine grid, Euler and VHP are already statistically consistent with the benchmark at a fraction of the cost.
 
 **Takeaway:** there is no universally best Monte Carlo method. The most efficient choice depends jointly on the option type, the barrier level and the simulation scheme.
 
